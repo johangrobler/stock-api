@@ -1,5 +1,5 @@
 module Api
-  class UserController < ApplicationController
+  class UsersController < ApplicationController
 
 
 
