@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # security
+  devise_for :admins
   resources :stock_takes
   root 'welcome#index'
 
@@ -10,11 +12,9 @@ Rails.application.routes.draw do
   resources :clinics
   resources :products
   resources :stocks
+  resources :users
 
-  # security
-
-  devise_for :users
-
+ 
 
   # api restfull routes
 

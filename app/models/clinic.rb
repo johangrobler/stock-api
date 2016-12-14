@@ -6,7 +6,7 @@ class Clinic < ApplicationRecord
 	after_validation :geocode          			# auto-fetch coordinates
 	reverse_geocoded_by :latitude, :longitude	# flild store location
 
-	after_update :create_stock
+	after_create :create_stock
 
 
 

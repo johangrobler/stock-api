@@ -1,6 +1,6 @@
 class StockTakesController < ApplicationController
   before_action :set_stock_take, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!
   # GET /stock_takes
   # GET /stock_takes.json
   def index
