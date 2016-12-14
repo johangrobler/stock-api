@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  clinic: one
+  latitude: 1.5
+  longitude: MyString
+  quantity: 1
+
+two:
+  product: two
+  clinic: two
+  latitude: 1.5
+  longitude: MyString
+  quantity: 1

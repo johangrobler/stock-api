@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clinic: one
+  product: one
+  quantity: 1
+  replenisch_at_quantity: 1
+
+two:
+  clinic: two
+  product: two
+  quantity: 1
+  replenisch_at_quantity: 1

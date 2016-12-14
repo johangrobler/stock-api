@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @stock_take.product %>
+</p>
+
+<p>
+  <strong>Clinic:</strong>
+  <%= @stock_take.clinic %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @stock_take.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @stock_take.longitude %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @stock_take.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_stock_take_path(@stock_take) %> |
+<%= link_to 'Back', stock_takes_path %>
