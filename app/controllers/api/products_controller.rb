@@ -12,7 +12,7 @@ module Api
             products:Product.all.collect{|p| {
               id:p.id,
               name:p.name,
-              name:p.barcode
+              barcode:p.barcode
 
             }
           }
