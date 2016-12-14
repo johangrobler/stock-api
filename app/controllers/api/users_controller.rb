@@ -1,5 +1,5 @@
 module Api
-  class StockTakesController < ApplicationController
+  class UserController < ApplicationController
 
 
 
