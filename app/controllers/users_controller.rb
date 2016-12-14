@@ -24,7 +24,8 @@ class UsersController < ApplicationController
   # POST /clinics
   # POST /clinics.json
   def create
-    @user = User.new(user_params) 
+    @user = User.new(user_params)
+    @user.password= 'rqwerqwenrqiwnriopqweorn'
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_url, notice: 'user was successfully created.' }

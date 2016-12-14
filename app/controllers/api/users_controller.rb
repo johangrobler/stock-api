@@ -14,7 +14,9 @@ module Api
 
 
       user = User.find_by(mobile:params[:mobile], pin:params[:pin] )
- 
+      if user
+        user.generate_token
+      end
  
       render json:user
  
