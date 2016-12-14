@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :clinics  
     resources :stocks
     resources :stock_takes
+    resources :users
  
   end
 end
