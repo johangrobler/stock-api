@@ -16,7 +16,7 @@ module Api
           end
 
           return_data  = {
-            stocks:StockTake.where(clinic_id:params[:clinic_id].to_i).order('id desc').all.collect{|stock| {
+            stocks:StockTake.order('id desc').all.collect{|stock| {
               id:stock.id,
               product_name:stock.product.name, 
               quantity:stock.quantity,
