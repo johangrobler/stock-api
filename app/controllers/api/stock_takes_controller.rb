@@ -20,6 +20,7 @@ module Api
               id:stock.id,
               product_name:stock.product.name, 
               quantity:stock.quantity,
+              created_at:stock.created_at,
               distance: Geocoder::Calculations.distance_between([stock.latitude,stock.longitude], [ params[:latitude],params[:longitude] ], :units => :km).to_i
          
 
