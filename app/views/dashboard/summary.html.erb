@@ -1,0 +1,50 @@
+<h1>Dashboard </h1>
+<br>
+<% if @stocks.count > 0 %>
+<div style="border-left:4px solid tomato;padding-left:40px;margin-bottom:50px">
+<h5>Clinics that requires stock</h5>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Clinic</th>
+      <th>Product</th>
+      <th>Quantity</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stocks.each do |stock| %>
+      <tr>
+        <td><%= stock.clinic.name %></td>
+        <td><%= stock.product.name %></td>
+        <td><%= stock.quantity %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+<% end %>
+<div style="border-left:4px solid dodgerblue;padding-left:40px;margin-bottom:50px">
+<h5>Products</h5>
+<br>
+<table class="table">
+  <thead>
+    <tr> 
+      <th>Product</th>
+      <th>Total at all clinics</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td> 
+        <td><%= product.stocks.sum(:quantity) %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>

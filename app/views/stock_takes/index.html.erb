@@ -1,31 +1,6 @@
 <p id="notice"><%= notice %></p>
-<% if @stocks.count > 0 %>
-<div style="border-left:4px solid tomato;padding-left:40px;margin-bottom:50px">
-<h1>Replenishment Required</h1>
-<br>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Clinic</th>
-      <th>Product</th>
-      <th>Quantity</th> 
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @stocks.each do |stock| %>
-      <tr>
-        <td><%= stock.clinic.name %></td>
-        <td><%= stock.product.name %></td>
-        <td><%= stock.quantity %></td> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-</div>
-<% end %>
-<h4>Stock Takes</h4>
+<h1>Stock Takes</h1>
 <br>
 <table class="table">
   <thead>

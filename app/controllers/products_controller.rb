@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    
+
     @product.stocks.destroy_all
     @product.destroy
     respond_to do |format|
@@ -71,6 +71,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :sku, :barcode)
+      params.require(:product).permit(:name, :sku, :barcode,:replenish_quantity)
     end
 end

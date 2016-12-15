@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'dashboard/summary'
+
   # security
   devise_for :admins
   resources :stock_takes

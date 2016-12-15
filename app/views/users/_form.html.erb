@@ -13,25 +13,22 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class:'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email , class:'form-control'%>
   </div>
 
   <div class="field">
     <%= f.label :mobile %>
-    <%= f.number_field :mobile %>
+    <%= f.number_field :mobile, class:'form-control' %>
   </div>
-
-  <div class="field">
-    <%= f.label :pin %>
-    <%= f.number_field :pin %>
-  </div>
+ 
 
   <div class="actions">
-    <%= f.submit %>
+  
+    <%= f.submit  class:'btn btn-primary btn-large'%>
   </div>
 <% end %>

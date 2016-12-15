@@ -5,7 +5,6 @@ class StockTakesController < ApplicationController
   # GET /stock_takes.json
   def index
 
-    @stocks = Stock.where('quantity <= replenisch_at_quantity')
 
 
     @stock_takes = StockTake.order('id desc').paginate(:page => params[:page], :per_page => 10)

@@ -11,27 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :clinic_id %>
-    <%= f.text_field :clinic_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :product_id %>
-    <%= f.text_field :product_id %>
-  </div>
+ 
 
   <div class="field">
     <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
+    <%= f.number_field :quantity , class:'form-control'%>
   </div>
 
   <div class="field">
-    <%= f.label :replenisch_at_quantity %>
-    <%= f.number_field :replenisch_at_quantity %>
+    <%= f.label :replenish_at_quantity %>
+    <%= f.number_field :replenisch_at_quantity , class:'form-control'%>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+
+    <%= f.submit  class:'btn btn-primary btn-large'%>
   </div>
 <% end %>

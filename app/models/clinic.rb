@@ -2,23 +2,25 @@ class Clinic < ApplicationRecord
 	
 	has_many :stocks
 
+	validates :name, presence: true
+	validates :address, presence: true
+	validates :mobile, presence: true
+
 	geocoded_by :address   						# can also be an IP address
 	after_validation :geocode          			# auto-fetch coordinates
 	reverse_geocoded_by :latitude, :longitude	# flild store location
 
 	after_create :create_stock
+	after_update :create_stock
 
 
 
 	def create_stock
 		puts self.name
-
 		Product.all.each do |product|
-
 				s = Stock.find_or_create_by(product:product,clinic:self)
-				s.replenisch_at_quantity =5  unless s.replenisch_at_quantity 
+				s.replenisch_at_quantity = product.replenish_quantity 
 				s.save
-
 		end
 	end
 

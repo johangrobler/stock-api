@@ -10,33 +10,23 @@
       </ul>
     </div>
   <% end %>
-
+ 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name , class:'form-control'%> 
   </div>
 
-  <div class="field">
+  <div class="<br>">
     <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
-  </div>
-
-  <div class="field">
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
+    <%= f.text_field :address , class:'form-control'%> 
   </div>
 
   <div class="field">
     <%= f.label :mobile %>
-    <%= f.text_field :mobile %>
+    <%= f.text_field :mobile, class:'form-control' %> 
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit  class:'btn btn-primary btn-large'%>
   </div>
 <% end %>

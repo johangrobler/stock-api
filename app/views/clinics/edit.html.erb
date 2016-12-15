@@ -1,6 +1,7 @@
-<h1>Editing Clinic</h1>
+<div class="row">
+  <div class="col-md-6">
+  	<h1>Edit Clinic</h1>
+	<%= render 'form', clinic: @clinic %>
+  </div>
+</div>
 
-<%= render 'form', clinic: @clinic %>
-
-<%= link_to 'Show', @clinic %> |
-<%= link_to 'Back', clinics_path %>

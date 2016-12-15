@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
+	validates :name, presence: true 
+	validates :mobile, presence: true
+  	validates :mobile, uniqueness: true
 
   def generate_token
     self.token = loop do

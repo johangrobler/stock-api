@@ -20,8 +20,7 @@
         <td><%= stock.product.name %></td>
         <td><%= stock.quantity %></td>
         <td><%= stock.replenisch_at_quantity %></td> 
-        <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
-        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_stock_path(stock),class:'btn btn-secondary btn-sm' %></td> 
       </tr>
     <% end %>
   </tbody>

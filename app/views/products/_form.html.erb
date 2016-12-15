@@ -13,20 +13,26 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name , class:'form-control'%>
   </div>
 
   <div class="field">
     <%= f.label :sku %>
-    <%= f.text_field :sku %>
+    <%= f.text_field :sku, class:'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :barcode %>
-    <%= f.text_field :barcode %>
+    <%= f.text_field :barcode , class:'form-control'%>
   </div>
+  <div class="field">
+    <%= f.label :replenish_quantity %>
+    <%= f.text_field :replenish_quantity , class:'form-control'%>
+  </div>
+ 
 
   <div class="actions">
-    <%= f.submit %>
+    
+    <%= f.submit  class:'btn btn-primary btn-large'%>
   </div>
 <% end %>
