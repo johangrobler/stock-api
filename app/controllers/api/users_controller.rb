@@ -8,7 +8,17 @@ module Api
     respond_to :json
  
   
- 
+   def show
+
+      user = User.find_by(mobile:params[:id].gsub('+',''))
+      if user
+          user.generate_pin_and_sms
+          render json:{pin:user.pin}
+      else
+          render json:{error:'User with this mobile number has not been added to users'}
+      end
+      #send user pin number
+   end
 
    def create  
 

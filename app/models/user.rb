@@ -16,4 +16,16 @@ class User < ApplicationRecord
     end
     self.save
   end
+
+  def generate_pin_and_sms
+
+    self.pin = rand(0000..9999).to_s.rjust(4, "0") 
+    self.save
+
+	require 'rubygems'
+	require 'clickatell'
+    api = Clickatell::API.authenticate(Rails.application.secrets.clickatel_api_id, Rails.application.secrets.clickatel_username, Rails.application.secrets.clickatel_password)
+	api.send_message(self.mobile, "Please confirm your phone number by entering this code on the app: "+self.pin)
+	  
+	end
 end

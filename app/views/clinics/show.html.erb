@@ -2,14 +2,7 @@
 
 <p id="notice"><%= notice %></p>
   
-<div class="row">
-
-  <div class="col-md-6">
-    <h1>Clinic</h1>
-    <br>  
-  </div>
-</div>
-
+ 
   
 <div class="row">
 
@@ -19,6 +12,8 @@
   </div>
 
   <div class="col-md-6">
+    <h1>Clinic Details</h1>
+    <br>
 <p>
   <strong>Name:</strong>
   <%= @clinic.name %>
@@ -60,18 +55,23 @@
         <tr> 
           <th>Product</th>
           <th>Quantity</th>
-          <th>Replenisch</th>
-          <th colspan="3"></th>
+          <th>Replenish Quantity</th> 
+        <th  style="width:20px;"></th>
         </tr>
       </thead>
 
       <tbody>
-        <% @clinic.stocks.each do |stock| %>
-          <tr> 
-            <td><%= stock.product.name %></td>
+        <% @clinic.stocks.each do |stock| %> 
+            <td><%= stock.product.name %></td> 
             <td><%= stock.quantity %></td>
-            <td><%= stock.replenisch_at_quantity %></td> 
-            <td><%= link_to 'Edit', edit_stock_path(stock) %></td> 
+            <td><%= stock.replenisch_at_quantity %></td>  
+            <td  >
+            <% if stock.quantity.to_i > stock.replenisch_at_quantity.to_i %>
+              <i class="material-icons" style="color:yellowgreen">checkmark</i>
+            <% else %>
+              <i class="material-icons"  style="color:red">close</i>
+            <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

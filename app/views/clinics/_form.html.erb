@@ -16,14 +16,16 @@
     <%= f.text_field :name , class:'form-control'%> 
   </div>
 
-  <div class="<br>">
+  <div class="field">
     <%= f.label :address %>
     <%= f.text_field :address , class:'form-control'%> 
+    Reverse geocoding is done. Please ensure the address is correct!
   </div>
 
   <div class="field">
     <%= f.label :mobile %>
     <%= f.text_field :mobile, class:'form-control' %> 
+    <p>This mobile receives sms when stock replensihment is required.</p>
   </div>
 
   <div class="actions">

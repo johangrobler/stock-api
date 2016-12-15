@@ -8,26 +8,25 @@
     <title>Stock</title>
     <%= csrf_meta_tags %>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-  
-		<style>
-		.right{float:right;}
-		.nav-link{padding-left:20px;}
-		.field{margin-bottom:20px;}
-		h1{font-weight:200;}
-		</style>
+   
+    		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   		   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   	</head>
   <body> 
 
 	<%=render 'layouts/navbar' %>
+	
+	<%=render 'layouts/welcome' %>
+	
 
   	<div class="container">
   		<br>
     	<%= yield %>
     </div>
-<!-- jQuery first, then Tether, then Bootstrap JS. --> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+
+	<!--   then Bootstrap JS. -->  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 
   </body>

@@ -1,5 +1,26 @@
-@import "bootstrap";
+ 
 
 .right{
 	float:right;
+}
+.right{float:right;}
+.nav-link{padding-left:20px;}
+.field{margin-bottom:20px;}
+h1{font-weight:200;}
+#error_explanation h2{
+	font-size:16px;
+	margin-left:20px;
+}
+#error_explanation {
+	border-left:3px solid red;
+	margin:20px 0px;
+
+}
+.bd-pageheader{
+	background-color: steelblue;
+	color:white;
+	padding:80px 0px;
+	h4{
+		margin-top:50px;font-weight:200;
+	}
 }
