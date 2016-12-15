@@ -10,11 +10,18 @@ module Api
   
     def index
 
+          unless params[:latitude]
+            params[:latitude]=-33.9379044
+            params[:longitude]=18.8619449
+          end
+
           return_data  = {
             stocks:StockTake.where(clinic_id:params[:clinic_id].to_i).order('id desc').all.collect{|stock| {
               id:stock.id,
               product_name:stock.product.name, 
               quantity:stock.quantity,
+              distance: Geocoder::Calculations.distance_between([c.latitude,c.longitude], [ params[:latitude],params[:longitude] ], :units => :km).to_i
+         
 
             }
           }
