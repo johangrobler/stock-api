@@ -56,6 +56,7 @@ class ProductsController < ApplicationController
   def destroy
 
     @product.stocks.destroy_all
+    @product.stock_takes.destroy_all
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }

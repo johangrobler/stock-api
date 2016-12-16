@@ -55,6 +55,7 @@ class ClinicsController < ApplicationController
   # DELETE /clinics/1.json
   def destroy
     @clinic.stocks.destroy_all
+    @clinic.stock_takes.destroy_all
     @clinic.destroy
     respond_to do |format|
       format.html { redirect_to clinics_url, notice: 'Clinic was successfully destroyed.' }
