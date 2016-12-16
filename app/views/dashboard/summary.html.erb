@@ -16,8 +16,8 @@
   <tbody>
     <% @stocks.each do |stock| %>
       <tr>
-        <td><%= stock.clinic.name %></td>
-        <td><%= stock.product.name %></td>
+        <td><%= link_to stock.clinic.name , stock.clinic%></td>
+        <td><%= link_to stock.product.name , stock.product%></td>
         <td><%= stock.quantity %></td> 
       </tr>
     <% end %>
@@ -27,20 +27,20 @@
 </div>
 <% end %>
 <div style="border-left:4px solid dodgerblue;padding-left:40px;margin-bottom:50px">
-<h5>Products at clinics</h5>
+<h5>Total products at clinics</h5>
 <br>
 <table class="table">
   <thead>
     <tr> 
       <th>Product</th>
-      <th>Total at all clinics</th> 
+      <th>Total</th> 
     </tr>
   </thead>
 
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.name %></td> 
+        <td><%= link_to product.name,product %></td> 
         <td><%= product.stocks.sum(:quantity) %></td> 
       </tr>
     <% end %>

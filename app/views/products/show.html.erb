@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="row">
+
+  <div class="col-md-12">
+<%= link_to 'Edit', edit_product_path(@product) ,class:'btn btn-secondary right' ,style:'margin-left:20px;'%>  
+<%= link_to 'Back', products_path ,class:'btn btn-secondary right'%>
+
+<h1>Product Details</h1>
+<br>
+
+<p id="notice"><%= notice %></p>
+
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -14,6 +26,41 @@
   <strong>Barcode:</strong>
   <%= @product.barcode %>
 </p>
+</div>
+</div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="row">
+
+  <div class="col-md-12">
+
+    <br>
+    <h4>Stock at clinics</h4>
+    <br>
+    <table class="table">
+      <thead>
+        <tr> 
+          <th>Clinic</th>
+          <th>Quantity</th>
+          <th>Replenish Quantity</th> 
+        <th  style="width:20px;"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @product.stocks.each do |stock| %> 
+            <td><%= link_to stock.clinic.name, stock.clinic %></td> 
+            <td><%= stock.quantity %></td>
+            <td><%= stock.replenisch_at_quantity %></td>  
+            <td  >
+            <% if stock.quantity.to_i > stock.replenisch_at_quantity.to_i %>
+              <i class="material-icons" style="color:yellowgreen">checkmark</i>
+            <% else %>
+              <i class="material-icons"  style="color:red">close</i>
+            <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

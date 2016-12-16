@@ -15,11 +15,10 @@
 
   <tbody>
     <% @stocks.each do |stock| %>
-      <tr><td >
- 
-         <%= stock.clinic.name %></td>
-        <td><%= stock.product.name %></td>
-        <td><%= stock.quantity %></td>
+      <tr>
+        <td><%= link_to stock.clinic.name , stock.clinic%></td>
+        <td><%= link_to stock.product.name , stock.product %></td>
+        <td><%= stock.quantity   %></td>
         <td><%= stock.replenisch_at_quantity %></td> 
         <td><%= link_to 'Edit', edit_stock_path(stock),class:'btn btn-secondary btn-sm' %></td> 
       </tr>
