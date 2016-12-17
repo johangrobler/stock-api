@@ -41,6 +41,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'deep_fetch'
 gem 'geocoder'
 gem 'clickatell', github: 'lukeredpath/clickatell'
+gem 'pusher'
 
 
 
