@@ -7,8 +7,15 @@
       function initMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 9,
-          center: {lat: -33.9379044, lng: 18.8619449}
+        	navigationControl: false,
+    		mapTypeControl: false,
+    		scaleControl: false    ,       // Set the zoom level manually
+			//zoomControl: false,
+			streetViewControl:false,
+			scaleControl: false,
+			scrollwheel: false,
+        	zoom: 9,
+        	center: {lat: -33.9379044, lng: 18.8619449}
         });
 
         // Create an array of alphabetical characters used to label the markers.
