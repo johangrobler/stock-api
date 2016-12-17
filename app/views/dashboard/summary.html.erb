@@ -1,5 +1,6 @@
- 
-<% if @stocks.count > 0 %><br>
+ <div class="row">
+    <div class="col-md-6">
+<% if @stocks.count > 0 %>
 <div style="border-left:4px solid tomato;padding-left:40px;margin-bottom:50px">
 <h5>Replenishment required</h5>
 <br>
@@ -25,6 +26,8 @@
 
 </div>
 <% end %>
+    </div>
+    <div class="col-md-6">
 <div style="border-left:4px solid dodgerblue;padding-left:40px;margin-bottom:50px">
 <h5>Total products at clinics</h5>
 <br>
@@ -45,5 +48,8 @@
     <% end %>
   </tbody>
 </table>
+
+</div>
+</div>
 
 </div>
