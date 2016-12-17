@@ -31,3 +31,17 @@ h1{font-weight:200;}
 	background-color:#DDD;
 	height:400px;
 }
+
+.replenish,.hasstock{
+	background-color:red;
+	border-radius:3px;
+	color:white;
+	text-align:center;
+	font-size:12px;
+	width:120px;
+	line-height:30px;
+}
+
+.hasstock{ 
+	background-color:yellowgreen; 
+}
