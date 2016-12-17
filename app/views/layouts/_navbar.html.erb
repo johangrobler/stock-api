@@ -5,7 +5,8 @@
     <div class="container">
     <button class="navbar-toggler hidden-lg-up float-xs-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
     <div class="collapse navbar-toggleable-md" id="navbarResponsive">
-      <a class="navbar-brand" href="/">StockManager</a>
+      <!-- i class="material-icons"  style="float:left;color:red;line-height:38px">add</i --> 
+      <a class="navbar-brand" href="/"> StockManager</a>
 
             <% if admin_signed_in? %>
 
@@ -43,12 +44,12 @@
             <% if admin_signed_in? %>
 
               <li class="nav-item">
-              <a href="/admins/edit"><%=current_admin.email %></a>
+              <a  class="nav-link" href="/admins/edit"><%=current_admin.email %></a>
 
               </li>
 
               <li class="nav-item">
-                <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'nav-item'  %>
+                <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'nav-link'  %>
               </li>
             <% else %> 
               <li class="nav-item"><a class="nav-link" href="/admins/sign_in">Login</a></li>
