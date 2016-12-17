@@ -43,14 +43,16 @@
 
             <% if admin_signed_in? %>
 
-              <li class="nav-item">
-              <a  class="nav-link" href="/admins/edit"><%=current_admin.email %></a>
-
-              </li>
-
-              <li class="nav-item">
-                <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'nav-link'  %>
-              </li>
+          <li class="nav-item dropdown  pull-left">
+              <a class="nav-link dropdown-toggle" id="supportedContentDropdown" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%=current_admin.email %></a>
+              <div class=" dropdown-menu  " aria-labelledby="supportedContentDropdown" >
+                
+                <a  class="dropdown-item" href="/admins/edit">Account</a>
+                <%= link_to "Logout", destroy_admin_session_path, method: :delete, :class => 'dropdown-item'  %>
+                
+              </div>
+        </li> 
             <% else %> 
               <li class="nav-item"><a class="nav-link" href="/admins/sign_in">Login</a></li>
             <% end %>
