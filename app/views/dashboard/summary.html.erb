@@ -53,10 +53,11 @@
 </div>
 
 </div>
-
+<div id="log"></div>
 
 
 <script> 
+var stock_takes=[];
 var pusher = new Pusher('62217549218f218bf085', {
   cluster: 'eu',
   encrypted: true
@@ -65,8 +66,23 @@ var channel = pusher.subscribe('mezzanine-stocktake');
 
 channel.bind('stocktake_event', function(data) {
   console.log(JSON.stringify(data));
+  stock_takes.push(data.stock_take);
+  buildStock();
 });
 
+function buildStock(){
+    var table = '<table class="table">';
+    for(var i=0; i < stock_takes.length; i++){
+      table += '<tr>';
+      table += '<td>'+stock_takes[i].clinic +'</td>';
+      table += '<td>'+stock_takes[i].product +'</td>';
+      table += '<td>'+stock_takes[i].quantity +'</td>';  
+      table += '</tr>';
+    }
+    table += '</table>';
+    $('#log').html(table);
+    console.log(table);
+}
 </script>
 
 

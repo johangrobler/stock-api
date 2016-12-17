@@ -21,7 +21,7 @@ class StockTake < ApplicationRecord
   
  
     pusher_client.trigger("mezzanine-stocktake", 'stocktake_event', {
-              stock_take: self
+              stock_take: {quantity:self.quantity,product:self.product.name,clinic:self.clinic.name}
     })
   
  	puts "pushed"
