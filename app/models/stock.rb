@@ -25,9 +25,7 @@ class Stock < ApplicationRecord
     pusher_client.trigger("mezzanine-stocktake", 'stocktake_event', {
               stock: self
     })
- 
-
-    end
+  
  
 
   end
