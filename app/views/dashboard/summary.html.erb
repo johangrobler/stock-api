@@ -63,9 +63,11 @@ var pusher = new Pusher('62217549218f218bf085', {
 });
 var channel = pusher.subscribe('mezzanine-stocktake');
 
-channel.bind('stocktake-event', function(data) {
-  alert('An event was triggered with message: ' + data.message);
+channel.bind('stocktake_event', function(data) {
+  alert('An event was triggered with message');
 });
+
+</script>
 
 
 
