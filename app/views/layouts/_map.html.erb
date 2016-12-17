@@ -1,0 +1,46 @@
+<% if params[:controller] == 'dashboard' %>
+<div id="map">
+
+</div>
+<script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 9,
+          center: {lat: -33.9379044, lng: 18.8619449}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+
+        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+  
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location, 
+            icon: image
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [ 
+        <% Clinic.all.each do |clinic| %>
+        {lat: <%= clinic.latitude%>,lng: <%= clinic.longitude %> },
+        <% end %>
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcgD3zzUo0VSwlc00EbbGCXTCatHeEORE&callback=initMap">
+    </script>
+<% end %>
