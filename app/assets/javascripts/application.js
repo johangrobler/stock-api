@@ -43,7 +43,7 @@ $( document ).ready(function() {
 			
 			map.setZoom(14);
 
-			map.panTo({lat: stock_take.latitude, lng: stock_take.longitude});
+			map.panTo({lat: stock_take.latitude, lng:  stock_take.longitude });
 		}
 	}
 	function buildStock(){
