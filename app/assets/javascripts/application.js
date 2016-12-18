@@ -39,8 +39,11 @@ $( document ).ready(function() {
 	});
 	function checkReplenishAlert(stock_take){
 		if(stock_take.quantity  <= stock_take.replenish_quantity){
-			console.log('move map center : '+stock_take.latitude)
-			map.setZoom(16);
+			console.log('move map center : '+stock_take.latitude +' : '+stock_take.longitude);
+			
+			map.setZoom(14);
+
+			map.panTo({lat: stock_take.latitude, lng: stock_take.longitude});
 		}
 	}
 	function buildStock(){
