@@ -66,10 +66,11 @@ $( document ).ready(function() {
 		    for(var i= stock_takes.length; i > 0 && limit > 0 ; i--){
 		 
 		      table += '<tr>';
-		      table += '<td>'+stock_takes[i-1].clinic +'</td>';
-		      table += '<td>'+stock_takes[i-1].product +'</td>';
-		      table += '<td>'+stock_takes[i-1].quantity +'</td>';  
-		      table += '<td>'+stock_takes[i-1].created_at  +'</td>';   
+		      table += '<td  class="hidden-md-up">'+stock_takes[i-1].product + '<br> </td>';
+		      table += '<td  class="hidden-xs-down">'+stock_takes[i-1].clinic +'</td>';
+		      table += '<td  class="hidden-xs-down">'+stock_takes[i-1].product +'</td>';
+		      table += '<td  class="hidden-xs-down" style="text-align:right;">'+stock_takes[i-1].quantity +'</td>';  
+		      table += '<td  class="hidden-xs-down">'+stock_takes[i-1].created_at  +'</td>';   
 		      if ( stock_takes[i-1].quantity > stock_takes[i-1].replenish_quantity){
 		          table += '<td><div class="hasstock"> OK </div></td>' 
 		      } else {
@@ -77,6 +78,7 @@ $( document ).ready(function() {
 		      } 
 		      
 		      table += '</tr>';
+		      table += '<tr class="hidden-md-up"><td colspan="2"><div style="font-size:22px;float:left;width:100px;text-align:center;">'+stock_takes[i-1].quantity +'</div>  at ' +stock_takes[i-1].clinic +'<p style="font-size:12px;">'+stock_takes[i-1].created_at  +'<p></td></tr>' ;
 		      limit--;
 		    }
 		    table += '</table><p>Showing last 5</p>';
