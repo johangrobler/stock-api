@@ -25,7 +25,7 @@ class User < ApplicationRecord
 	require 'rubygems'
 	require 'clickatell'
     api = Clickatell::API.authenticate(Rails.application.secrets.clickatel_api_id, Rails.application.secrets.clickatel_username, Rails.application.secrets.clickatel_password)
-	api.send_message(self.mobile, "Please confirm your phone number by entering this code on the app: "+self.pin)
+	api.send_message(self.mobile, "Please enter pin: #{self.pin} on stock app to login ")
 	  
 	end
 end
