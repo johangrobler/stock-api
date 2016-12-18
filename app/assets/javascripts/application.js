@@ -16,6 +16,7 @@
 //= require_tree .
 var locations =[];
 var map;
+var marker;
 $( document ).ready(function() {
 
 	console.log('doc ready');
@@ -44,6 +45,12 @@ $( document ).ready(function() {
 			map.setZoom(14);
 
 			map.panTo({lat: stock_take.latitude, lng:  stock_take.longitude });
+
+			 marker = new google.maps.Marker({
+          		position: {lat: stock_take.latitude, lng:  stock_take.longitude },
+          		map: map
+        	});
+
 		}
 	}
 	function buildStock(){
