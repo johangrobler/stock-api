@@ -47,3 +47,29 @@ h1{font-weight:200;}
 .hasstock{ 
 	background-color:yellowgreen; 
 }
+
+
+.pagination {
+	ul {
+			a { color:#555;}
+		padding:0px 10px;
+		.disabled {
+			
+			a { color:#555;}
+		}
+		li {
+			float:left;
+			list-style:none;
+			border:1px solid #eee;
+			padding:5px 15px;
+			margin-left:-1px;
+		}
+		.active{
+			border:1px solid #333;
+			background-color: #333;
+			a { color:white;}
+			a:hover { color:white;}
+			a:active { color:white;}
+		}
+	}
+}

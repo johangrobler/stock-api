@@ -42,7 +42,7 @@ gem 'deep_fetch'
 gem 'geocoder'
 gem 'clickatell', github: 'lukeredpath/clickatell'
 gem 'pusher'
-
+gem 'bootstrap-will_paginate'
 
 
 group :development, :test do
