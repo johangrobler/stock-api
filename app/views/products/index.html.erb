@@ -6,24 +6,22 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Sku</th>
+      <th>Name</th> 
       <th>Barcode</th>
-      <th>Clinic min quantity</th>
-      <th colspan="2"></th>
+      <th style="text-align:right;">Stock</th>
+      <th  class="hidden-xs-down"  colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= link_to product.name ,product %></td>
-        <td><%= product.sku %></td>
+        <td><%= link_to product.name ,product %></td> 
         <td><%= product.barcode %></td> 
-        <td><%= product.replenish_quantity %></td> 
+        <td style="text-align:right;"><%= product.stocks.sum(:quantity) %></td> 
 
-        <td width="50"><%= link_to 'Edit', edit_product_path(product) ,class:'btn btn-secondary btn-sm'%></td>
-        <td  width="50">
+        <td  class="hidden-xs-down" width="40"><%= link_to 'Edit', edit_product_path(product) ,class:'btn btn-secondary btn-sm'%></td>
+        <td  class="hidden-xs-down"  width="40">
 
         <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } ,class:'btn btn-danger btn-sm'%>
         

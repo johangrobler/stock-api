@@ -5,17 +5,12 @@
 
   <div class="col-md-12">
 <%= link_to 'Edit', edit_product_path(@product) ,class:'btn btn-secondary right' ,style:'margin-left:20px;'%>  
-<%= link_to 'Back', products_path ,class:'btn btn-secondary right'%>
+<%= link_to 'Back', products_path ,class:'btn btn-secondary right hidden-xs-down'%>
 
-<h1>Product Details</h1>
-<br>
-
+<h1><%= @product.name %></h1>
+<br> 
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+ 
 
 <p>
   <strong>Sku:</strong>
@@ -40,18 +35,18 @@
       <thead>
         <tr> 
           <th>Clinic</th>
-          <th>Quantity</th>
-          <th>Replenish Quantity</th> 
-        <th  style="width:20px;"></th>
+          <th style="text-align:right;" >Quantity</th>
+          <th align="right"  class="hidden-xs-down" >Replenish Quantity</th> 
+        <th  class="hidden-xs-down"  style="width:20px;"></th>
         </tr>
       </thead>
 
       <tbody>
         <% @product.stocks.each do |stock| %> 
             <td><%= link_to stock.clinic.name, stock.clinic %></td> 
-            <td><%= stock.quantity %></td>
-            <td><%= stock.replenisch_at_quantity %></td>  
-            <td  >
+            <td align="right" ><%= stock.quantity %></td>
+            <td align="right"  class="hidden-xs-down" ><%= stock.replenisch_at_quantity %></td>  
+            <td  class="hidden-xs-down"  >
             <% if stock.quantity.to_i > stock.replenisch_at_quantity.to_i %>
               <i class="material-icons" style="color:yellowgreen">checkmark</i>
             <% else %>

@@ -7,9 +7,9 @@
     <tr> 
       <th>Clinic</th>
       <th>Product</th>
-      <th>Quantity</th>
-      <th>Replenisch Qty</th>
-      <th colspan="2"></th>
+      <th style="text-align:right;">Quantity</th>
+      <th class="hidden-xs-down">Replenisch Qty</th>
+      <th class="hidden-xs-down" colspan="2"></th>
     </tr>
   </thead>
 
@@ -18,9 +18,9 @@
       <tr>
         <td><%= link_to stock.clinic.name , stock.clinic%></td>
         <td><%= link_to stock.product.name , stock.product %></td>
-        <td><%= stock.quantity   %></td>
-        <td><%= stock.replenisch_at_quantity %></td> 
-        <td><%= link_to 'Edit', edit_stock_path(stock),class:'btn btn-secondary btn-sm' %></td> 
+        <td style="text-align:right;"><%= stock.quantity   %></td>
+        <td class="hidden-xs-down"><%= stock.replenisch_at_quantity %></td> 
+        <td class="hidden-xs-down"><%= link_to 'Edit', edit_stock_path(stock),class:'btn btn-secondary btn-sm' %></td> 
       </tr>
     <% end %>
   </tbody>

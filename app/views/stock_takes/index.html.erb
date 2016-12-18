@@ -6,23 +6,28 @@
   <thead>
     <tr>
       <th>Product</th>
-      <th>Clinic</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Quantity</th> 
-      <th>When</th> 
+      <th  class="hidden-xs-down">Clinic</th>
+      <th  class="hidden-xs-down">Latitude</th>
+      <th  class="hidden-xs-down">Longitude</th>
+      <th  style="text-align:right;">Quantity</th> 
+      <th class="hidden-xs-down">When</th> 
     </tr>
   </thead>
 
   <tbody>
     <% @stock_takes.each do |stock_take| %>
       <tr>
-        <td><%= link_to stock_take.product.name, stock_take.product %></td>
-        <td><%= link_to stock_take.clinic.name, stock_take.clinic  %></td>
-        <td><%= stock_take.latitude %></td>
-        <td><%= stock_take.longitude %></td>
-        <td><%= stock_take.quantity %></td> 
-        <td><%= time_ago_in_words stock_take.created_at %> ago</td> 
+        <td class="hidden-xs-down"><%= link_to stock_take.product.name, stock_take.product %> </td>
+        <td class="hidden-md-up"> 
+          <%= link_to stock_take.product.name, stock_take.product %>  at 
+          <%= link_to stock_take.clinic.name, stock_take.clinic  %> 
+          <div class="hidden-md-up">about <%= time_ago_in_words stock_take.created_at %> ago </div>
+        </td>
+        <td  class="hidden-xs-down"><%= link_to stock_take.clinic.name, stock_take.clinic  %></td>
+        <td  class="hidden-xs-down"><%= stock_take.latitude %></td>
+        <td  class="hidden-xs-down"><%= stock_take.longitude %></td>
+        <td  style="text-align:right;"><%= stock_take.quantity %></td> 
+        <td  class="hidden-xs-down"><%= time_ago_in_words stock_take.created_at %> ago</td> 
       </tr>
     <% end %>
   </tbody>
