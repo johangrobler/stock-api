@@ -44,10 +44,8 @@
         {lat: <%= clinic.latitude%>,lng: <%= clinic.longitude %> },
         <% end %>
       ]
+
+      initMap();
     </script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcgD3zzUo0VSwlc00EbbGCXTCatHeEORE&callback=initMap">
-    </script>
+
 <% end %>
