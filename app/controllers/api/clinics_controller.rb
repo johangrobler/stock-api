@@ -30,6 +30,7 @@ module Api
                     id:stock.id,
                     product_id: stock.product_id,
                     product: stock.product.name,
+                    barcode: stock.product.barcode,
                     quantity: stock.quantity
                 }
               }
