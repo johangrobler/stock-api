@@ -69,7 +69,7 @@ $( document ).ready(function() {
 		    table += '</table><p>Showing last 5</p>';
 		    if( $('#log').length ){
 		    	 $('#log').html(table);
-		    	 console.log(table); 
+		    	// console.log(table); 
 		    }
 		    
 		}
