@@ -45,10 +45,16 @@ $( document ).ready(function() {
 			map.setZoom(14);
 
 			map.panTo({lat: stock_take.latitude, lng:  stock_take.longitude });
-
+			 var redimage = 'https://mezzanine-stock.herokuapp.com/red.png';
+  		 	 if(marker){
+  		 	 	  marker.setMap(null);
+  		 	 }
 			 marker = new google.maps.Marker({
           		position: {lat: stock_take.latitude, lng:  stock_take.longitude },
-          		map: map
+          		map: map,
+          		icon: redimage,
+          		animation: google.maps.Animation.DROP ,
+          		zIndex:1000
         	});
 
 		}
