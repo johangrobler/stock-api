@@ -26,8 +26,8 @@ class StockTake < ApplicationRecord
               	quantity:self.quantity,
               	product:self.product.name,
               	clinic:self.clinic.name,
-                latitude:self.latitude.to_f,
-                longitude:self.longitude.to_f,
+                latitude:self.clinic.latitude.to_f,
+                longitude:self.clinic.longitude.to_f,
               	created_at: time_ago_in_words(self.created_at),
               	replenish_quantity:self.product.replenish_quantity
               }
