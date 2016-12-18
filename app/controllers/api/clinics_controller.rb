@@ -25,8 +25,14 @@ module Api
               address:c.address,
               latitude:c.latitude,
               longitude:c.longitude,
-              distance: Geocoder::Calculations.distance_between([c.latitude,c.longitude], [ params[:latitude],params[:longitude] ], :units => :km).to_i
-               
+              distance: Geocoder::Calculations.distance_between([c.latitude,c.longitude], [ params[:latitude],params[:longitude] ], :units => :km).to_i,
+              stock: c.stocks.all.collect{|stock| {
+                    id:stock.id,
+                    product_id: stock.product_id,
+                    product: stock.product.name,
+                    quantity: stock.quantity
+                }
+              }
 
             }
           }
