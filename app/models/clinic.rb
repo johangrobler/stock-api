@@ -31,8 +31,8 @@ class Clinic < ApplicationRecord
 		
 		require 'rubygems'
         require 'clickatell' 
-        api = Clickatell::API.authenticate(Rails.application.secrets.clickatel_api_id, Rails.application.secrets.clickatel_username, Rails.application.secrets.clickatel_password)
-        api.send_message(self.mobile, "#{self.name}'s stock level for #{stock.product.name} is at #{stock.quantity} and needs replenishment")
+        # api = Clickatell::API.authenticate(Rails.application.secrets.clickatel_api_id, Rails.application.secrets.clickatel_username, Rails.application.secrets.clickatel_password)
+        # api.send_message(self.mobile, "#{self.name}'s stock level for #{stock.product.name} is at #{stock.quantity} and needs replenishment")
     
 	end
 end

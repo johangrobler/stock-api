@@ -58,7 +58,14 @@
 </div>
 <p id="notice"><%= notice %></p>
 
- 
+ <script type="text/javascript">
+   locations = [ 
+        <% Clinic.all.each do |clinic| %>
+        {lat: <%= clinic.latitude%>,lng: <%= clinic.longitude %> },
+        <% end %>
+      ]
+   
+ </script>
 
 
 

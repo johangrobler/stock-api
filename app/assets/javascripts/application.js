@@ -14,7 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
+var locations =[];
+var map;
 $( document ).ready(function() {
 
 	console.log('doc ready');
@@ -34,8 +35,14 @@ $( document ).ready(function() {
 	  console.log(JSON.stringify(data));
 	  stock_takes.push(data.stock_take);
 	  buildStock();
+	  checkReplenishAlert(data.stock_take);
 	});
-
+	function checkReplenishAlert(stock_take){
+		if(stock_take.quantity  <= stock_take.replenish_quantity){
+			console.log('move map center : '+stock_take.latitude)
+			map.setZoom(16);
+		}
+	}
 	function buildStock(){
 		if(stock_takes.length > 0 ){
 		    var limit = 5;
@@ -68,6 +75,61 @@ $( document ).ready(function() {
 	$(document).on("turbolinks:load", function(){
 		console.log('page loaded');
 		buildStock();
+		if( $('#map').length ){
+			initMap();
+		}
 	});
  
+
+	// map scripts
+
+	 function initMap() {
+
+        map = new google.maps.Map(document.getElementById('map'), {
+        	navigationControl: false,
+    		mapTypeControl: false,
+    		scaleControl: false    ,       // Set the zoom level manually
+			//zoomControl: false,
+			streetViewControl:false,
+			scaleControl: false,
+			scrollwheel: false,
+        	zoom: 9,
+        	center: {lat: -33.9379044, lng: 18.8619449}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+
+        var image = 'https://mezzanine-stock.herokuapp.com/pin.png';
+  
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location, 
+            icon: image
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+     
+
+
+      /*
+ 		var locations = [ 
+        <% Clinic.all.each do |clinic| %>
+        {lat: <%= clinic.latitude%>,lng: <%= clinic.longitude %> },
+        <% end %>
+      ]
+      */
+
+
+
+
 });
