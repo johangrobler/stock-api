@@ -35,13 +35,16 @@ module Api
 
    def create  
 
+      puts "STOCK TAKE PERFORMED BY: #{@current_user.name}"
+
 
       stock_take = StockTake.create(
         clinic_id:params[:clinic_id],
         product_id:params[:product_id],
         quantity:params[:quantity],
         latitude:params[:latitude],
-        longitude:params[:longitude]
+        longitude:params[:longitude].
+        user_id:@current_user.id
       )
 
       Stock.find_by(clinic_id:params[:clinic_id],product_id:params[:product_id]).update_stock_quantity(params[:quantity])

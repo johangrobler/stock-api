@@ -11,7 +11,7 @@ class StockTake < ApplicationRecord
 
   def push_stock_take
   	
- 	puts "push"
+ 	  puts "push"
 
   	require 'pusher'
     pusher_client = Pusher::Client.new(
