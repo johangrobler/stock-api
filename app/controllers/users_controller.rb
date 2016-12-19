@@ -4,12 +4,13 @@ class UsersController < ApplicationController
   # GET /clinics
   # GET /clinics.json
   def index
-    @users = User.all.paginate(:page => params[:page], :per_page => 10)
+    @users = User.order('id').paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /clinics/1
   # GET /clinics/1.json
   def show
+    @stock_takes  = @user.stock_takes.order('id desc').paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /clinics/new

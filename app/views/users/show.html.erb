@@ -56,7 +56,7 @@
   </thead>
 
   <tbody>
-    <% @user.stock_takes.each do |stock_take| %>
+    <% @stock_takes.each do |stock_take| %>
       <tr>
         <td class="hidden-xs-down"><%= link_to stock_take.product.name, stock_take.product %> </td>
         <td class="hidden-md-up"> 
