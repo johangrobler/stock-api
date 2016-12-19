@@ -40,7 +40,7 @@ Clinics, Products and Users are managed from the controllers
 
 * Stock get automaticaly created when product or clinic is added and minimum order is set on all stock
 
-* Minimun order of each stock item is attribute of stock
+* Minimum order of each stock item is attribute of stock
 
 * StockTake gets created via API from app
 
