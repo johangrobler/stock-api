@@ -19,7 +19,7 @@ module Api
           end
 
           return_data  = {
-            stocks:StockTake.order('id desc').all.collect{|stock| {
+            stocks:@current_userstock_takes.order('id desc').all.collect{|stock| {
               id:stock.id,
               product_name:stock.product.name, 
               quantity:stock.quantity,
@@ -35,10 +35,7 @@ module Api
 
    end
 
-   def create  
-
-      puts "STOCK TAKE PERFORMED BY: #{@current_user.name}"
-
+   def create   
 
       stock_take = StockTake.create(
         clinic_id:params[:clinic_id],
