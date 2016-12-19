@@ -1,7 +1,11 @@
 class Clinic < ApplicationRecord
-	
+
+	# relationships
+
 	has_many :stocks
 	has_many :stock_takes
+ 
+    #validates
 
 	validates :name, presence: true
 	validates :address, presence: true
@@ -14,6 +18,14 @@ class Clinic < ApplicationRecord
 	after_create :create_stock
 	after_update :create_stock
 
+
+
+	# business rules
+	
+	# 1. Add product to all clinics as stock
+	# 2. Set stock replenish quantity  of stocks
+	# 3. Reverse geolocate
+	# 4. Send SMS if replenishment is required (from stock_take api controller)
 
 
 	def create_stock
@@ -33,7 +45,7 @@ class Clinic < ApplicationRecord
         require 'clickatell' 
         api = Clickatell::API.authenticate(Rails.application.secrets.clickatel_api_id, Rails.application.secrets.clickatel_username, Rails.application.secrets.clickatel_password)
         api.send_message(self.mobile, "#{self.name}'s stock level for #{stock.product.name} is at #{stock.quantity} and needs replenishment")
-     
+
 
 	end
 end

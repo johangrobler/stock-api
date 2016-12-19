@@ -1,7 +1,8 @@
 module Api
-  class StockTakesController < ApplicationController
+  class StockTakesController < ApiBaseController
 
-
+    # 1. create stock_take from app
+    # 2. update quantity on Stock
 
     include ActionView::Helpers::DateHelper
     skip_before_filter  :verify_authenticity_token

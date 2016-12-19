@@ -4,8 +4,7 @@ class Product < ApplicationRecord
 
 	has_many :stocks
 	has_many :stock_takes
-
-
+ 
 	# validation rules
 
 	validates :name, presence: true 
@@ -13,9 +12,7 @@ class Product < ApplicationRecord
 	validates :replenish_quantity, presence: true
   	validates :barcode, uniqueness: true
   	validates :name, uniqueness: true
-
-
-
+ 
 	# business rules
 	
 	# 1. Add product to all clinics as stock
@@ -24,8 +21,7 @@ class Product < ApplicationRecord
 	after_create :create_stock
 	after_update :create_stock
 
-	def create_stock
- 
+	def create_stock 
 
 		Clinic.all.each do |clinic|
 			s = Stock.find_or_create_by(product:self,clinic:clinic)

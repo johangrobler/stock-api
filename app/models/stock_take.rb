@@ -6,6 +6,8 @@ class StockTake < ApplicationRecord
 
   after_create :push_stock_take
 
+  # 1. Push live websocket call to subscribers
+
 
   def push_stock_take
   	

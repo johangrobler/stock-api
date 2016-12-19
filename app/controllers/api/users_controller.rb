@@ -2,6 +2,8 @@ module Api
   class UsersController < ApplicationController
 
 
+    # 1. Check id user exosts
+    # 2. Generate and return token to app [for access control and identification of user]
 
     include ActionView::Helpers::DateHelper
     skip_before_filter  :verify_authenticity_token

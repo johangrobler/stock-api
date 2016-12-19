@@ -4,10 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # validation rules
 
 	validates :name, presence: true 
 	validates :mobile, presence: true
-  	validates :mobile, uniqueness: true
+  validates :mobile, uniqueness: true
+
+
+  # business rules
+  
+  # 1. Send SMS with pin on mobile app login
+  # 2. Generate token and send to app 
+
 
   def generate_token
     self.token = loop do
