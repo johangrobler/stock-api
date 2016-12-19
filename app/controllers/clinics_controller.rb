@@ -10,6 +10,7 @@ class ClinicsController < ApplicationController
   # GET /clinics/1
   # GET /clinics/1.json
   def show
+     @stock_takes  = @user.stock_takes.where('user_id is not null').order('id desc').paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /clinics/new

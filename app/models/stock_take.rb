@@ -2,7 +2,7 @@ class StockTake < ApplicationRecord
   include ActionView::Helpers::DateHelper
   belongs_to :product
   belongs_to :clinic
-
+  belongs_to :user
 
   after_create :push_stock_take
 
