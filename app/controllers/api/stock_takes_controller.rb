@@ -1,6 +1,8 @@
 module Api
   class StockTakesController < ApiBaseController
 
+    include ActionView::Helpers::DateHelper
+
     # 1. create stock_take from app 
     # 2. assign to user an geostamp location of stocktake
     # 3. update quantity on Stock
@@ -23,7 +25,7 @@ module Api
               id:stock.id,
               product_name:stock.product.name, 
               quantity:stock.quantity,
-              created_at:stock.created_at,
+              created_at: time_ago_in_words(stock.created_at),
               distance: Geocoder::Calculations.distance_between([stock.latitude,stock.longitude], [ params[:latitude],params[:longitude] ], :units => :km).to_i
          
 
