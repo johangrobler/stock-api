@@ -1,7 +1,23 @@
-# README
+# StockManager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+StockManager was created with a Ruby on Rails and an Ionic 2 Hybrid app. The Rails app serves as the backend for the app aswell 
+as a restfull API for the App.
+
+### Database Model (Tables)
+
+
+
+* Product
+
+* Clinic
+
+* Stock
+
+* StockTake
+
+* User
+
+
 
 Things you may want to cover:
 
