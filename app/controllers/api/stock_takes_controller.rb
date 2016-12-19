@@ -19,7 +19,7 @@ module Api
           end
 
           return_data  = {
-            stocks:@current_userstock_takes.order('id desc').all.collect{|stock| {
+            stocks:@current_user.stock_takes.order('id desc').all.collect{|stock| {
               id:stock.id,
               product_name:stock.product.name, 
               quantity:stock.quantity,
