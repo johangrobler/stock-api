@@ -20,6 +20,7 @@ class ClinicsController < ApplicationController
 
   # GET /clinics/1/edit
   def edit
+    
   end
 
   # POST /clinics
