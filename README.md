@@ -30,9 +30,11 @@ API controller to serve the app(app/controllers)
 ### Basic Business rules
 
 
-Clinics, Products and User is manages via controllers
+Clinics, Products and Users are managed from the controllers
+
 
 #### Business rules
+
 
 * Minimum stock quanity of product is attribute of product
 
@@ -45,5 +47,30 @@ Clinics, Products and User is manages via controllers
 * StockTake gets created via API from app
 
 * When stock reaches minimum order a SMS gets send to a mobile number that is an attribute of the clinic
+
+
+#### App business rules
+
+
+* User needs to exists on system
+
+* User login with mobile and receive sms code to login
+
+* User location is accessed and the nearest clinic is displayed
+
+* User scans product with barcode scanner to identify stock and enter quantity
+
+* User can swipe left to set zero quantuty when product is out of stock an is unable to scan
+
+
+### How to use the App
+
+The app can be used via the Ionic View App : <http://view.ionic.io/>
+
+
+Register or login and preview the app using the following code:
+
+0656f90a
+
 
 
