@@ -20,23 +20,30 @@ The web app is hosted on Heroku and is located at: <https://mezzanine-stock.hero
 * User
 
 
+CRUD action is performed by the controller (app/controllers)
 
-Things you may want to cover:
+All business logic is inside the models (app/models)
 
-* Ruby version
+API controller to serve the app(app/controllers)
 
-* System dependencies
 
-* Configuration
+### Basic Business rules
 
-* Database creation
 
-* Database initialization
+Clinics, Products and User is manages via controllers
 
-* How to run the test suite
+#### Business rules
 
-* Services (job queues, cache servers, search engines, etc.)
+* Minimum stock quanity of product is attribute of product
 
-* Deployment instructions
+* Clinic address is mandatory and a reverse geocoding is done to get latitude and longitude of clinic
 
-* ...
+* Stock get automaticaly created when product or clinic is added and minimum order is set on all stock
+
+* Minimun order of each stock item is attribute of stock
+
+* StockTake gets created via API from app
+
+* When stock reaches minimum order a SMS gets send to a mobile number that is an attribute of the clinic
+
+
