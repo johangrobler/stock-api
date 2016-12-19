@@ -1,8 +1,10 @@
 module Api
   class StockTakesController < ApiBaseController
 
-    # 1. create stock_take from app
-    # 2. update quantity on Stock
+    # 1. create stock_take from app 
+    # 2. assign to user an geostamp location of stocktake
+    # 3. update quantity on Stock
+    # 4  Sock will trigger notification if needed
 
     include ActionView::Helpers::DateHelper
     skip_before_filter  :verify_authenticity_token
@@ -43,7 +45,7 @@ module Api
         product_id:params[:product_id],
         quantity:params[:quantity],
         latitude:params[:latitude],
-        longitude:params[:longitude].
+        longitude:params[:longitude],
         user_id:@current_user.id
       )
 
